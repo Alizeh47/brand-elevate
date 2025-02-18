@@ -49,12 +49,12 @@ export default function Header() {
               home
             </Link>
             <Link 
-              href="/case-study" 
+              href="/case-studies" 
               className={`text-sm border-b-2 border-transparent hover:border-purple-600 transition-all ${
                 isTeamPage ? 'text-white hover:text-purple-300 hover:border-purple-300' : 'text-gray-900 hover:text-purple-600'
               }`}
             >
-              case study
+              case studies
             </Link>
             <Link 
               href="/team" 
