@@ -1,7 +1,34 @@
-import { Hexagon, Circle, Triangle, Square } from 'lucide-react'
+'use client'
+
+import React from 'react'
 import Header from '@/components/layout/Header'
+import Image from 'next/image'
+import { Users, Target, Award, Lightbulb } from 'lucide-react'
 
 export default function AboutPage() {
+  const features = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Expert Team",
+      description: "Our dedicated team of professionals brings years of experience in digital marketing and brand development."
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Client Focus",
+      description: "We prioritize understanding your unique needs and goals to deliver tailored solutions that drive results."
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Quality First",
+      description: "Excellence is our standard. We ensure every project meets the highest quality benchmarks."
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Innovation",
+      description: "We stay ahead of industry trends to bring you cutting-edge solutions and creative strategies."
+    }
+  ]
+
   return (
     <>
       <Header />
@@ -11,7 +38,7 @@ export default function AboutPage() {
           className="fixed inset-0 transition-all duration-1000 ease-in-out -z-10"
           style={{
             background: `
-              radial-gradient(circle at 0% 0%, 
+              radial-gradient(circle at 100% 0%, 
                 rgba(168, 85, 247, 0.15) 0%,
                 rgba(236, 72, 153, 0.15) 30%,
                 rgba(99, 102, 241, 0.15) 70%
@@ -24,99 +51,85 @@ export default function AboutPage() {
         {/* Floating Geometric Shapes */}
         <div className="fixed inset-0 pointer-events-none -z-5">
           <div className="absolute top-20 left-10 animate-float opacity-10">
-            <Hexagon className="w-32 h-32 text-purple-500" />
+            <div className="w-32 h-32 border-4 border-purple-500 rounded-full"></div>
           </div>
           <div className="absolute bottom-40 right-20 animate-float opacity-10" style={{ animationDelay: '1s' }}>
-            <Circle className="w-24 h-24 text-pink-500" />
+            <div className="w-24 h-24 border-4 border-pink-500 transform rotate-45"></div>
           </div>
           <div className="absolute top-1/3 right-1/4 animate-float opacity-10" style={{ animationDelay: '2s' }}>
-            <Triangle className="w-20 h-20 text-indigo-500" />
-          </div>
-          <div className="absolute bottom-1/4 left-1/4 animate-float opacity-10" style={{ animationDelay: '1.5s' }}>
-            <Square className="w-16 h-16 text-purple-500" />
+            <div className="w-20 h-20 border-4 border-indigo-500 transform rotate-[30deg]"></div>
           </div>
         </div>
 
         {/* Content */}
         <div className="container mx-auto px-4 py-24">
           {/* Header Section */}
-          <div className="relative mb-20">
-            <h1 className="text-6xl font-letterform text-center mb-6 relative z-10">
+          <div className="relative mb-16 text-center">
+            <h1 className="text-5xl font-letterform text-center mb-6 relative z-10">
               About Us
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-purple-600 to-pink-500"></div>
             </h1>
-            <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">
-              Crafting compelling narratives and elevating brands through strategic content creation
+            <p className="text-lg text-center text-gray-600 max-w-2xl mx-auto">
+              We are passionate about helping brands reach their full potential through innovative digital solutions
             </p>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 relative">
-            {/* Mission Section */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-pink-500/5 rounded-2xl transform transition-transform group-hover:scale-105"></div>
-              <div className="relative bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/10">
-                <h2 className="text-3xl font-letterform mb-6 text-purple-600">Our Mission</h2>
+          {/* Company Introduction */}
+          <div className="max-w-5xl mx-auto mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="relative aspect-square rounded-2xl overflow-hidden">
+                  <Image
+                    src="/images/meeting.jpg"
+                    alt="Our Team"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-transparent"></div>
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-purple-500/30"></div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-purple-500/30"></div>
+              </div>
+              <div>
+                <h2 className="text-3xl font-letterform mb-6 text-gray-800">
+                  Elevating Brands Through Digital Excellence
+                </h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  At BrandElevate, we believe in the power of digital transformation to revolutionize how brands connect with their audience. Our journey began with a simple mission: to help businesses thrive in the digital age through innovative solutions and strategic thinking.
+                </p>
                 <p className="text-gray-600 leading-relaxed">
-                  We strive to transform ideas into impactful content that resonates with audiences and drives meaningful engagement. Our approach combines creativity with strategic thinking to deliver exceptional results.
+                  We combine creativity with technical expertise to deliver results that exceed expectations. Our approach is collaborative, transparent, and focused on long-term success.
                 </p>
               </div>
             </div>
+          </div>
 
-            {/* Values Section */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-600/5 rounded-2xl transform transition-transform group-hover:scale-105"></div>
-              <div className="relative bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/10">
-                <h2 className="text-3xl font-letterform mb-6 text-pink-500">Our Values</h2>
-                <ul className="space-y-4 text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    <span>Excellence in every word we write</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    <span>Innovation in content strategy</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
-                    <span>Dedication to client success</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Process Section */}
-            <div className="relative group md:col-span-2">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 via-pink-500/5 to-indigo-500/5 rounded-2xl transform transition-transform group-hover:scale-105"></div>
-              <div className="relative bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/10">
-                <h2 className="text-3xl font-letterform mb-6 text-center bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                  Our Process
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600/10 to-pink-500/10 flex items-center justify-center">
-                      <span className="text-2xl font-letterform text-purple-600">1</span>
-                    </div>
-                    <h3 className="text-xl font-letterform mb-2 text-gray-800">Research</h3>
-                    <p className="text-gray-600">Deep understanding of your brand and objectives</p>
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {features.map((feature, index) => (
+              <div key={index} className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-pink-500/5 rounded-2xl transform transition-transform group-hover:scale-[1.01]"></div>
+                <div className="relative bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-500/20 transition-all">
+                  <div className="text-purple-600 mb-4">
+                    {feature.icon}
                   </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-pink-500/10 to-purple-600/10 flex items-center justify-center">
-                      <span className="text-2xl font-letterform text-pink-500">2</span>
-                    </div>
-                    <h3 className="text-xl font-letterform mb-2 text-gray-800">Create</h3>
-                    <p className="text-gray-600">Crafting engaging and impactful content</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-500/10 to-purple-600/10 flex items-center justify-center">
-                      <span className="text-2xl font-letterform text-indigo-500">3</span>
-                    </div>
-                    <h3 className="text-xl font-letterform mb-2 text-gray-800">Deliver</h3>
-                    <p className="text-gray-600">Ensuring excellence in final delivery</p>
-                  </div>
+                  <h3 className="text-xl font-letterform mb-4 text-gray-800">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-16 text-center">
+            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-xl hover:opacity-90 transition-opacity font-medium shadow-lg hover:shadow-xl">
+              Join Our Team
+            </button>
           </div>
         </div>
       </main>

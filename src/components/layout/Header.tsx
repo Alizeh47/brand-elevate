@@ -48,7 +48,7 @@ export default function Header() {
             <Link href="/our-team" className="text-sm text-gray-900 hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-all">
               our team
             </Link>
-            <Link href="/customer-story" className="text-sm text-gray-900 hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-all">
+            <Link href="/story" className="text-sm text-gray-900 hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-all">
               customer story
             </Link>
             <Link href="/contact" className="text-sm text-gray-900 hover:text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-all">
