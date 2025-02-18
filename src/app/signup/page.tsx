@@ -62,7 +62,7 @@ export default function SignUpPage() {
                 rgba(99, 102, 241, 0.15) 70%
               )
             `,
-            backdropFilter: 'blur(100px)'
+            backdropFilter: 'blur(50px)'
           }}
         />
 
