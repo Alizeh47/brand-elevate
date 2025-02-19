@@ -77,7 +77,7 @@ export default function HeroSection() {
             >
               <source src="/videos/team-meeting.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-400/40 to-pink-300/40 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-pink-300/10 backdrop-blur-[px]" />
           </div>
         </div>
 
@@ -97,7 +97,28 @@ export default function HeroSection() {
 
         {/* Animated Dots Grid */}
         <div className="absolute inset-0 z-0 pt-20">
-          {[...Array(20)].map((_, i) => (
+          {[
+            { left: '15%', top: '20%' },
+            { left: '85%', top: '15%' },
+            { left: '25%', top: '45%' },
+            { left: '75%', top: '35%' },
+            { left: '10%', top: '65%' },
+            { left: '90%', top: '55%' },
+            { left: '35%', top: '85%' },
+            { left: '65%', top: '75%' },
+            { left: '45%', top: '25%' },
+            { left: '55%', top: '95%' },
+            { left: '20%', top: '30%' },
+            { left: '80%', top: '40%' },
+            { left: '30%', top: '70%' },
+            { left: '70%', top: '60%' },
+            { left: '40%', top: '50%' },
+            { left: '60%', top: '80%' },
+            { left: '50%', top: '90%' },
+            { left: '15%', top: '85%' },
+            { left: '85%', top: '25%' },
+            { left: '25%', top: '65%' }
+          ].map((position, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0 }}
@@ -109,8 +130,8 @@ export default function HeroSection() {
                   : 'bg-gradient-to-r from-pink-400 to-pink-600'
               }`}
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: position.left,
+                top: position.top,
               }}
             />
           ))}

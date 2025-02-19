@@ -27,34 +27,42 @@ const caseStudies = [
   {
     id: 1,
     title: 'website content',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description: 'Transforming digital presence through strategic website content optimization and user experience enhancement.',
     image: '/images/case-studies/website-content.jpg',
     imagePosition: 'left',
-    imageSize: 'medium'
+    imageSize: 'medium',
+    link: '/case-studies/website-content',
+    icon: <Globe className="w-6 h-6" />
   },
   {
     id: 2,
     title: 'internet marketing',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description: 'Driving growth through innovative digital marketing strategies and targeted campaign optimization.',
     image: '/images/case-studies/internet-marketing.jpg',
     imagePosition: 'right',
-    imageSize: 'large'
+    imageSize: 'large',
+    link: '/case-studies/internet-marketing',
+    icon: <Target className="w-6 h-6" />
   },
   {
     id: 3,
     title: 'blog writing',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description: 'Creating engaging blog content that connects with audiences and drives organic traffic growth.',
     image: '/images/case-studies/blog-writing.jpg',
     imagePosition: 'left',
-    imageSize: 'large'
+    imageSize: 'large',
+    link: '/case-studies/blog-writing',
+    icon: <PenTool className="w-6 h-6" />
   },
   {
     id: 4,
     title: 'newspaper content',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    description: 'Delivering impactful news content that engages readers and maintains journalistic excellence.',
     image: '/images/case-studies/newspaper-content.jpg',
     imagePosition: 'right',
-    imageSize: 'medium'
+    imageSize: 'medium',
+    link: '/case-studies/newspaper-content',
+    icon: <Newspaper className="w-6 h-6" />
   }
 ];
 
@@ -243,17 +251,18 @@ export default function CaseStudyList() {
                       transition={{ duration: 0.6, delay: 0.3 }}
                       viewport={{ once: true }}
                       className={`absolute top-1/2 -translate-y-1/2 ${
-                        study.id === 2 || study.id === 4 ? '-left-24' : '-left-8'
+                        study.id === 2 ? '-left-16' : 
+                        study.id === 4 ? '-left-16' : 
+                        '-left-8'
                       }`}
                     >
                       <Link 
-                        href={`/case-studies/${study.title.replace(' ', '-')}`}
-                        className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white hover:scale-110 transition-transform duration-300 shadow-lg"
+                        href={study.link}
+                        className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
                       >
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
+                        <div className="transform transition-transform duration-300 group-hover:rotate-12">
+                          {study.icon}
+                        </div>
                       </Link>
                     </motion.div>
                   )}
@@ -288,13 +297,12 @@ export default function CaseStudyList() {
                       className="inline-block"
                     >
                       <Link 
-                        href={`/case-studies/${study.title.replace(' ', '-')}`}
-                        className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white hover:scale-110 transition-transform duration-300 shadow-lg"
+                        href={study.link}
+                        className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
                       >
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
+                        <div className="transform transition-transform duration-300 group-hover:rotate-12">
+                          {study.icon}
+                        </div>
                       </Link>
                     </motion.div>
                   )}
